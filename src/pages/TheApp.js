@@ -72,7 +72,7 @@ const TheApp = () => {
                   variant="outlined"
                   value={input.buzz}
                   name='buzz'
-                  onChange={handleChange}
+                  onChange={handleChange} 
                 />
               </Grid>
               <Grid item xs={6} lg={6}>
