@@ -5,31 +5,30 @@ import AlertTitle from "@mui/material/AlertTitle";
 import Stack from "@mui/material/Stack";
 
 const TheApp = () => {
-
   const [name, setName] = React.useState("Never odd or even");
-  const [reversed, setReversed] = useState("");
   const [active, setActive] = useState(false);
-  const [palindrom, setPalindrome] = useState(false);
 
-  const handleChange = (event) => {
-    setName(event.target.value);
-    setActive(false);
-  };
+
+  const [input, setInput] = useState({
+    fizz: 3,
+    buzz: 5,
+    start:1,
+    end: 100,
+  });
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setInput({
+      ...input,
+      [name]: value,
+    });
+
+  }
 
   const handleSubmit = () => {
     setActive(true);
 
-    const preprocessing_regex = /[^a-zA-Z0-9]/g;
-    const processed_string = name
-      .toLowerCase()
-      .replace(preprocessing_regex, "");
-    const integrity_check = processed_string.split("").reverse().join("");
-    setReversed(integrity_check);
-    if (processed_string === integrity_check) {
-      setPalindrome(true);
-    } else {
-      setPalindrome(false);
-    }
   };
   return (
     <div className="mt-5">
@@ -47,36 +46,67 @@ const TheApp = () => {
           </Grid>
           <Grid item xs={12} sm={12} md={4} lg={6}>
             <b>Enter a phrase or word to check</b>
-            <TextField
-              margin="normal"
-              size="small"
-              fullWidth
-              id="outlined-basic"
-              label="Palindrom"
-              variant="outlined"
-              value={name}
-              onChange={handleChange}
-            />
+            <Grid container spacing={3}>
+              <Grid item xs={6} lg={6}>
+                {" "}
+                <TextField
+                  margin="normal"
+                  size="small"
+                  fullWidth
+                  id="outlined-basic"
+                  label="Fizz"
+                  variant="outlined"
+                  value={input.fizz}
+                  name='fizz'
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={6} lg={6}>
+                {" "}
+                <TextField
+                  margin="normal"
+                  size="small"
+                  fullWidth
+                  id="outlined-basic"
+                  label="Buzz"
+                  variant="outlined"
+                  value={input.buzz}
+                  name='buzz'
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={6} lg={6}>
+                {" "}
+                <TextField
+                  margin="normal"
+                  size="small"
+                  fullWidth
+                  id="outlined-basic"
+                  label="start"
+                  variant="outlined"
+                  value={input.start}
+                  name='start'
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={6} lg={6}>
+                {" "}
+                <TextField
+                  margin="normal"
+                  size="small"
+                  fullWidth
+                  id="outlined-basic"
+                  label="end"
+                  variant="outlined"
+                  value={input.end}
+                  name='end'
+                  onChange={handleChange}
+                />
+              </Grid>
+            </Grid>
             <Button className="mb-3" onClick={handleSubmit} variant="contained">
               check
             </Button>
-            {active && (
-              <Stack sx={{ width: "100%" }} spacing={2}>
-                {palindrom ? (
-                  <Alert severity="success">
-                    <AlertTitle>
-                      Well done you have entered a Palindrome
-                    </AlertTitle>
-                    your string reversed is <strong>{reversed}</strong>
-                  </Alert>
-                ) : (
-                  <Alert severity="info">
-                    <AlertTitle>Info</AlertTitle>
-                    <strong>{name}</strong> is not a Palindrome
-                  </Alert>
-                )}
-              </Stack>
-            )}
           </Grid>
         </Grid>
       </Container>
