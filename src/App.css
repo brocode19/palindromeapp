@@ -2,3 +2,6 @@
 
 }
 
+.tableItem:nth-child(even){
+    background-color: blue;
+}
