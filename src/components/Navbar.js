@@ -88,7 +88,7 @@ const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {SidebarData.map((page) => (
+              {SidebarData.map((page,index) => (
                 <Link
                   style={{
                     textDecoration: "none",
@@ -96,10 +96,11 @@ const Navbar = () => {
                     color:'grey',
                   }}
                   to={page.path}
-                  key={page}
+                  key={index}
                   onClick={handleCloseNavMenu}
                   className="text-center"
                 >
+                  {console.log(index)}
                   <MenuItem>
                     <Typography textAlign="center">{page.title}</Typography>
                   </MenuItem>
@@ -127,7 +128,7 @@ const Navbar = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {SidebarData.map((page) => (
+            {SidebarData.map((page,index) => (
               <Link
                 style={{
                   textDecoration: "none",
@@ -135,7 +136,7 @@ const Navbar = () => {
                   display: "block",
                 }}
                 to={page.path}
-                key={page}
+                key={index}
                 onClick={handleCloseNavMenu}
                 className="ms-3"
               >
