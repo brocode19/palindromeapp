@@ -6,7 +6,8 @@ import Stack from "@mui/material/Stack";
 import { Table } from "react-bootstrap";
 
 const TheApp = () => {
-  const [name, setName] = React.useState("Never odd or even");
+  const [name, setName] = useState("Never odd or even");
+  const [active, setActive] = useState(false);
   const [numbers, setNumbers] = useState([0, 1]);
 
   const [input, setInput] = useState({
@@ -16,8 +17,11 @@ const TheApp = () => {
     end: 100,
   });
 
+
   function handleChange(event) {
     const { name, value } = event.target;
+
+    setActive(false);
 
     setInput({
       ...input,
@@ -26,6 +30,7 @@ const TheApp = () => {
   }
 
   function fizzBuzz() {
+    setActive(true);
     let list = [];
 
     for (let i = input.start; i <= input.end; i++) {
@@ -38,38 +43,32 @@ const TheApp = () => {
       list.push(str);
     }
 
-    let x = []
+    let x = [];
 
-    const limit =  Math.ceil(input.end / 4) * 4
+    const limit = Math.ceil(input.end / 4) * 4;
 
-    for (let i = 4; i <= limit ; i += 4) {
-
+    for (let i = 4; i <= limit; i += 4) {
       if (i === 4) {
         x.push({
-        item1:list[0],
-        item2:list[1],
-        item3:list[2],
-        item4:list[3]
-        })
-        
+          item1: list[0],
+          item2: list[1],
+          item3: list[2],
+          item4: list[3],
+        });
       }
 
       if (i > 4) {
-        
         x.push({
-          item1:list[i-4],
-          item2:list[i-3],
-          item3:list[i-2],
-          item4:list[i-1]
-        })
+          item1: list[i - 4],
+          item2: list[i - 3],
+          item3: list[i - 2],
+          item4: list[i - 1],
+        });
       }
-      
-      
     }
 
     setNumbers(x);
   }
-
 
   console.log(numbers);
 
@@ -87,10 +86,7 @@ const TheApp = () => {
               run.
             </p>
             <div className="container">
-              <div className="row">
-              {numbers.for}
-              </div>
-  
+              <div className="row">{numbers.for}</div>
             </div>
           </Grid>
           <Grid item xs={12} sm={12} md={4} lg={6}>
@@ -157,29 +153,22 @@ const TheApp = () => {
               check
             </Button>
 
-            <Table striped size="sm">
-      <tbody>
-
-        {numbers.map((item,index)=> {
-          return(
-          <tr key={index}>
-
-            <td>{item.item1}</td>
-            <td>{item.item2}</td>
-            <td>{item.item3}</td>
-            <td>{item.item4}</td>
-
-
-          </tr>)
-        })}
-
-      </tbody>
-    </Table>
-
-
-
- 
-
+            {active && (
+              <Table striped size="sm">
+                <tbody>
+                  {numbers.map((item, index) => {
+                    return (
+                      <tr key={index}>
+                        <td>{item.item1}</td>
+                        <td>{item.item2}</td>
+                        <td>{item.item3}</td>
+                        <td>{item.item4}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </Table>
+            )}
           </Grid>
         </Grid>
       </Container>
