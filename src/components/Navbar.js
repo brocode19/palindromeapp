@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 
 const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Account", "Dashboard", "Logout"]; 
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
