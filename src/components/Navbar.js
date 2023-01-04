@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 
 const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"]; 
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -40,7 +40,7 @@ const Navbar = () => {
     <AppBar component="nav" position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          
           <Typography
             variant="h6"
             noWrap
@@ -56,7 +56,7 @@ const Navbar = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            NK
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -148,7 +148,7 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Typography sx={{color:"white"}} variant="h5">T||K</Typography>
               </IconButton>
             </Tooltip>
             <Menu
