@@ -16,18 +16,18 @@ export const SidebarData = [
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
-  {
-    title: 'TheCode',
-    path: '/TheCode',
-    icon: <IoIcons.IoMdPeople />,
-    cName: 'nav-text'
-  },
-  {
-    title: 'About',
-    path: '/About',
-    icon: <FaIcons.FaEnvelopeOpenText />,
-    cName: 'nav-text'
-  },
+  // {
+  //   title: 'TheCode',
+  //   path: '/TheCode',
+  //   icon: <IoIcons.IoMdPeople />,
+  //   cName: 'nav-text'
+  // },
+  // {
+  //   title: 'About',
+  //   path: '/About',
+  //   icon: <FaIcons.FaEnvelopeOpenText />,
+  //   cName: 'nav-text'
+  // },
 
 
 
