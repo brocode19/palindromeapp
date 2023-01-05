@@ -80,13 +80,13 @@ const TheApp = () => {
             <Typography variant="h5" sx={{ mb: 2 }}>
               FIZZ BUZZ: A Coding Project
             </Typography>
-            <p>
-              When it counts you Fizz Buzz. A Javascript coding exercise using loops. Write a program that prints the numbers from 1 to 100 and for multiples of "3" display "Fizz buzz" instead of the number and for the multiples of "5" display "Buzz".If a multiple of both display "FizzBuzz"
-            </p>
+            <Typography variant="body2" sx={{ pb: 3, color: "#497174" }}>
+            When it counts you Fizz Buzz. A Javascript coding exercise using loops. Write a program that prints the numbers from 1 to 100 and for multiples of "3" display "Fizz buzz" instead of the number and for the multiples of "5" display "Buzz".If a multiple of both display "FizzBuzz"
+            </Typography>
             <Typography variant="h6" sx={{ mb: 2 }}>
               Instructions
             </Typography>
-            <Typography variant="p" sx={{ mb: 2 }}>
+            <Typography variant="body2" sx={{ mb: 2 }}>
               Enter a fizz, buzz and range value. Press the button and the values will appear.
             </Typography>
             
