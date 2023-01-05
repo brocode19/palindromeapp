@@ -20,15 +20,15 @@ const Home = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={4} lg={4}>
             <Typography variant="h5" sx={{ pb: 3, color: "black" }}>
-              {"Anagram Checker"}
+              {"Palindrome Checker"}
             </Typography>
             <Typography variant="body2" sx={{ pb: 3, color: "#497174" }}>
               {
-                "Anagram Checker is a coding exercise done with react js using hooks, functions and object deconstruction.Write a function that takes two words as an argument and returns true if they are anagrams (contain the exact same letters) and false otherwise."
+                "Palindrome checker is a coding exercise done with react js using hooks, functions and object deconstruction.Write a function that takes a word then returns true if it is a palindrome and false otherwise."
               }
               <br />
               <br />
-              {/* {props.discription2} */}
+              {'A Palindrome is a word, phrase, or sequence that reads the same backwards as forwards, e.g. madam or nurses run.'}
             </Typography>
 
             <Typography variant="h6" sx={{ pb: 2, color: "black" }}>
