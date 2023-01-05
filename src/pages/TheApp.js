@@ -77,14 +77,20 @@ const TheApp = () => {
       <Container maxWidth="xl">
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={8} lg={6}>
-            <Typography variant="h4" sx={{ mb: 2 }}>
-              Never odd or even: A Coding Project
+            <Typography variant="h5" sx={{ mb: 2 }}>
+              FIZZ BUZZ: A Coding Project
             </Typography>
-            <p>
-              Never odd or even, A Palindrome is a word, phrase, or sequence
-              that reads the same backwards as forwards, e.g. madam or nurses
-              run.
-            </p>
+            <Typography variant="body2" sx={{ pb: 3, color: "#497174" }}>
+            When it counts you Fizz Buzz. A Javascript coding exercise using loops. Write a program that prints the numbers from 1 to 100 and for multiples of "3" display "Fizz buzz" instead of the number and for the multiples of "5" display "Buzz".If a multiple of both display "FizzBuzz"
+            </Typography>
+            <Typography variant="h6" sx={{ mb: 2 }}>
+              Instructions
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 2 }}>
+              Enter a fizz, buzz and range value. Press the button and the values will appear.
+            </Typography>
+            
+            
             <div className="container">
               <div className="row">{numbers.for}</div>
             </div>
@@ -150,7 +156,7 @@ const TheApp = () => {
               </Grid>
             </Grid>
             <Button className="mb-3" onClick={fizzBuzz} variant="contained">
-              check
+              BUZZ IT
             </Button>
 
             {active && (
